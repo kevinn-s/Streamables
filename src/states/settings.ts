@@ -1,0 +1,41 @@
+import { create } from 'zustand';
+
+export interface Settings {
+    blockAds: boolean,
+    preferH264: boolean,
+    playbackRate: number,
+    playbackQuality: string,
+    showDislikes: boolean,
+    showOriginalVideoTitle: boolean,
+    sponsorBlock: boolean,
+    userAgent: string,
+    desktopMode: boolean,
+    desktopModeYT: boolean,
+    defaultZoom: number,
+    theme: null | 'dark' | 'light',
+    dynamicColor: boolean,
+    proxyEnabled: boolean,
+    proxyType: 'http' | 'socks',
+    proxyHost: string,
+    proxyPort: string,
+}
+
+export const useSettingsStore = create<Settings>()(() => ({
+    blockAds: true,
+    preferH264: false,
+    playbackRate: 1,
+    playbackQuality: 'auto',
+    showDislikes: true,
+    showOriginalVideoTitle: false,
+    sponsorBlock: true,
+    userAgent: '',
+    desktopMode: false,
+    desktopModeYT: false,
+    defaultZoom: 1,
+    theme: null,
+    dynamicColor: false,
+    proxyEnabled: false,
+    proxyType: 'http',
+    proxyHost: '',
+    proxyPort: '',
+}));
